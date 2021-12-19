@@ -103,7 +103,7 @@ def verb_questions():
             '¿Te gusta __________ por teléfono? ')
         if to_talk_question == "hablar":
             print(
-                f'¿Te gusta {to_talk_question} mucho?')
+                f'¿Te gusta {to_talk_question} por teléfono mucho?')
             print('Do you like to talk on the phone a lot?')
             experience_wallet += 15
             print(f"You are awarded yet another 15 points. You now have {experience_wallet} in your experience wallet.")
