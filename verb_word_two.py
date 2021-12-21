@@ -3,7 +3,6 @@ from verb_world import *
 
 experience_wallet = 75
 
-
 def log_in(name, occupation, password):
     print("In order to proceed to the next level, you will need to log in again.")
     while True:
@@ -36,7 +35,7 @@ def verb_questions_two():
         l = list(scramble_aprender)
         random.shuffle(l)
         y = ''.join(l)
-        print(f'Unscramble the following verb "{y}"')
+        print(f'Unscramble the following verb "{y}" Hint: it is an -er verb, meaning it ends in -er.')
         to_learn = input(
             '¿Cómo se dice "to learn" en español? \n Please unscramble the verb. ')
         if to_learn == 'aprender':
@@ -58,7 +57,7 @@ def verb_questions_two():
         l = list(scramble_trabajar)
         random.shuffle(l)
         y = ''.join(l)
-        print(f'Unscramble the following verb "{y}"')
+        print(f'Unscramble the following verb "{y}" Hint: it is an -ar verb, meaning it ends in -ar.')
         to_work = input(
             '¿Cómo se dice "to work" en español? \n Please unscramble the verb. ')
         if to_work == 'trabajar':
@@ -78,7 +77,7 @@ def verb_questions_two():
         l = list(scramble_vivir)
         random.shuffle(l)
         y = ''.join(l)
-        print(f'Unscramble the following verb "{y}"')
+        print(f'Unscramble the following verb "{y}" Hint: it is an -ir verb, meaning it ends in -ir.')
         to_live = input(
             '¿Cómo se dice "to live" en español? \n Please unscramble the verb. ')
         if to_live == 'vivir':
@@ -92,3 +91,58 @@ def verb_questions_two():
             break
         else:
             print('Intenta otra vez, por favor.', to_live, 'is not "to live."')
+
+    print('Fantástico, now we will finish with another quiz for the verbs you learned. \n But first, we will revisit the menu.')
+    while True:
+        menu = int(input(
+            '1: Dictionary of verbs you will learn in this game. 2. Verbs you have learned in this game.\n'
+            ' 3. Experience wallet. Misc. key. Continue: '))
+        if menu == 1:
+            print("There are no more verbs left to learn!", verbs_to_learn)
+        if menu == 2:
+            print("Here are the verbs you have learned", verbs_learned)
+        if menu == 3:
+            print(f"You have {experience_wallet} in your experience wallet.")
+        else:
+            break
+
+    print("Write the correct verb in order to complete the statement according to context. \n These sentences will contain cognates, words that are identical in two languages.")
+
+    while True:
+        to_live_question = input(
+            'Yo prefiero ________________ en Colombia en un apartamento. ')
+        if to_live_question == "vivir":
+            print(
+                f'Correcto, the answer is: Yo prefiero {to_live_question} en Colombia en un apartamento.')
+            print('I prefer to live in Colombia in an apartment.')
+            experience_wallet += 25
+            print(f"You are awarded 25 points. You now have {experience_wallet} in your experience wallet.")
+            break
+        else:
+            print('Incorrecto. Trata de nuevo por favor.')
+
+    while True:
+        to_learn_question = input(
+            'La universidad es buena para _____________ nueva información. ')
+        if to_learn_question == "aprender":
+            print(
+                f'La universidad es buena para {to_learn_question} nueva información.')
+            print('The university is good to learn new information.')
+            experience_wallet += 25
+            print(f"You are awarded another 25 points. You now have {experience_wallet} in your experience wallet.")
+            break
+        else:
+            print('Incorrecto. Trata de nuevo por favor.')
+
+    while True:
+        to_work_question = input(
+            'En una carrera o profesión, es necesario _____________ muchas horas. ')
+        if to_work_question == "trabajar":
+            print(
+                f'En una carrera o profesión, es necesario {to_work_question} muchas horas.')
+            print('In a career or profession, it is necessary to work many hours.')
+            experience_wallet += 25
+            print(f"You are awarded yet another 25 points. You now have {experience_wallet} in your experience wallet.")
+            break
+        else:
+            print('Incorrecto. Trata de nuevo por favor.')
