@@ -1,13 +1,12 @@
 from verb_world import verbs_to_learn, verbs_learned, verb_questions, experience_wallet
 from verb_world_two import log_in, verb_questions_two
-import random
+from prizes import *
 
 class Player:
     def __init__(self, name, occupation, password):
         self.name = name
         self.occupation = occupation
         self.password = password
-
 
 name = input(
     "Welcome to Ryan's Spanish verb world (mundo de verbos en español)! \nPlease enter your name: ")
@@ -36,7 +35,8 @@ while True:
         break
 print("When you learn a verb, the verb you learned will be added to your dictionary (#2) \n"
       "and removed from the dictionary of verbs you will learn (#1). Also, you will receive points \n"
-      "for each correct answer. They will be added to your experience wallet.")
+      "for each correct answer. They will be added to your experience wallet. Please type all answers \n"
+      "to questions in lower-case.")
 
 print("Muy bien, empezamos ahora. Write your answers and submit using the enter key.")
 
@@ -47,5 +47,12 @@ print("Now, we will continue onto the next level where you will learn the remain
 log_in(name, occupation, password)
 
 verb_questions_two()
+
+print("¡Felicitaciones! You have just completed Ryan's Spanish verb game! You can now use the \n"
+      "points in your experience wallet to purchase yourself a trip to these countries: ")
+
+travel_selection(travel_prizes)
+
+print("Gracias for playing! ¡Adiós!")
 
 game_player = Player(name, occupation, password)
