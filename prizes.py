@@ -1,10 +1,10 @@
-
+# below is a list of places the player can purchase with what they have from their experience wallet
 travel_prizes = ['Argentina - 200 experience', 'Colombia - 170 experience', 'Mexico - 160 experience', 'Peru - 190 experience', 'Ecuador - 180 experience']
 
-experience_wallet = 210
-
+experience_wallet = 210 # final amount before player makes a purchase
+# function for player to choose a prize at end of game
 def travel_selection(travel_prizes):
-      for prize in travel_prizes:
+      for prize in travel_prizes: # for loop to iterate and show the prizes in the list above
             print(prize)
 
       global experience_wallet
@@ -12,12 +12,12 @@ def travel_selection(travel_prizes):
 
       prize_selector = int(input("1. Press 1 if you want to save your experience. 2. Press 2 to choose your own from the list. "))
 
-      while True:
+      while True: # allows player to leave game without picking a prize
             if prize_selector == 1:
                   print("Okay, we hope to see you in the next game!")
                   break
 
-            if prize_selector == 2:
+            if prize_selector == 2: # allows player to input their prize
                   prize_selector_choose = input('Where would you like to go? ')
                   if prize_selector_choose == 'Argentina':
                         experience_wallet -= 200
