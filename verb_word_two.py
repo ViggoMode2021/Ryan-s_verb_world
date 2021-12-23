@@ -1,9 +1,9 @@
-import random
-from verb_world import *
+import random # used below
+from verb_world import * # used to import dictionaries
 
-experience_wallet = 75
+experience_wallet = 75 # variable reset here as 75 because it was easier than to import it
 
-def log_in(name, occupation, password):
+def log_in(name, occupation, password): # log-in authentication for player to log-in again after completing level 1
     print("In order to proceed to the next level, you will need to log in again.")
     while True:
         log_in_name = input("Please enter your name. ")
@@ -28,13 +28,13 @@ def log_in(name, occupation, password):
         else:
             print("Incorrect, please try again.")
 
-
+# function below is for second set of verb questions
 def verb_questions_two():
     while True:
-        scramble_aprender = "aprender"
-        l = list(scramble_aprender)
-        random.shuffle(l)
-        y = ''.join(l)
+        scramble_aprender = "aprender" # this is the correct verb answer
+        l = list(scramble_aprender) # functionality to scramble string above for player to unscramble
+        random.shuffle(l) # functionality to scramble string above for player to unscramble
+        y = ''.join(l) # functionality to scramble string above for player to unscramble
         print(f'Unscramble the following verb "{y}" Hint: it is an -er verb, meaning it ends in -er.')
         to_learn = input(
             '¿Cómo se dice "to learn" en español? \n Please unscramble the verb. ')
@@ -98,9 +98,9 @@ def verb_questions_two():
             '1: Dictionary of verbs you will learn in this game. 2. Verbs you have learned in this game.\n'
             ' 3. Experience wallet. Misc. key. Continue: '))
         if menu == 1:
-            print("There are no more verbs left to learn!", verbs_to_learn)
+            print("There are no more verbs left to learn!", verbs_to_learn) # dictionary is empty
         if menu == 2:
-            print("Here are the verbs you have learned", verbs_learned)
+            print("Here are the verbs you have learned", verbs_learned) # dictionary is full
         if menu == 3:
             print(f"You have {experience_wallet} in your experience wallet.")
         else:
@@ -108,7 +108,7 @@ def verb_questions_two():
 
     print("Write the correct verb in order to complete the statement according to context. \n These sentences will contain cognates, words that are identical in two languages.")
 
-    while True:
+    while True: # some more fill in the blank questions
         to_live_question = input(
             'Yo prefiero ________________ en Colombia en un apartamento. ')
         if to_live_question == "vivir":
