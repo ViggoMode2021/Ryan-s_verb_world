@@ -1,12 +1,15 @@
-# list is empty at start of game and a verb is added here once the player learns it.
+# dictionary below is empty at start of game and a verb (key: English, value: Spanish) is appended here once the player learns it.
 verbs_learned = {}
+
+# dictionary below is full of English verbs at start of game and a verb is popped from here once the player learns it.
 
 verbs_to_learn = {'to talk': '', 'to eat': '', 'to write': '',
                   'to work': '', 'to learn': '', 'to live': ''}
 
+# experience_wallet set to 0 initially and will be incremented throughout game
 experience_wallet = 0
 
-# function below runs through the verb questions in the game.
+# function below runs through the first set of verb questions in the game.
 
 def verb_questions():
     while True:
@@ -14,11 +17,11 @@ def verb_questions():
             '¿Cómo se dice "to talk" en español? \n opciones: hablar, comer, escribir ')
         if to_talk == 'hablar':
             print('Excelente, "to talk" es "hablar" en español.')
-            verbs_learned['hablar'] = 'to talk'
-            verbs_to_learn.pop('to talk')
+            verbs_learned['hablar'] = 'to talk' # key, value added to verbs_learned dictionary
+            verbs_to_learn.pop('to talk') # key, value popped from verbs_learned dictionary
             print("Here is your updated dictionary of verbs you learned!", verbs_learned)
             global experience_wallet
-            experience_wallet += 10
+            experience_wallet += 10 # experience_wallet incremented by ten
             print(f"You earned 10 points. You now have {experience_wallet} in your experience wallet.")
             break
         else:
@@ -108,6 +111,5 @@ def verb_questions():
             experience_wallet += 15
             print(f"You are awarded yet another 15 points. You now have {experience_wallet} in your experience wallet.")
             break
-            return experience_wallet
         else:
             print('Incorrecto. Trata de nuevo por favor.')
